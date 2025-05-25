@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Home | NeuroScribe</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header>
+  <div class="logo">NeuroScribe: Turning thoughts into words</div>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/generate">Generate</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </nav>
+</header>
+  <section class="hero fade-in">
+    <h1>🧬 EEG to Text Translator</h1>
+    <p>Turn your brainwaves into thoughts using AI, NLP & Brain-Computer Interfaces.</p>
+    <a href="/generate" class="btn card-float">🚀 Try Now</a>
+  </section>
+  <section class="features fade-in">
+    <div class="card card-float">
+      <h3>⚡ AI-Powered</h3>
+      <p>Built on transformers, semantic matching, and ZuCo EEG dataset</p>
+    </div>
+    <div class="card card-float">
+      <h3>🌐 Multilingual</h3>
+      <p>Supports English, Hindi & Tamil with consistent thought mapping</p>
+    </div>
+    <div class="card card-float">
+      <h3>📊 Live EEG Analysis</h3>
+      <p>Graph your signals, scores, and feature patterns in real-time</p>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 NeuroScribe | Final Year Project</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Generate | NeuroScribe</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">NeuroScribe: Turning thoughts into words</div>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/generate">Generate</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="upload-section fade-in">
+    <h1>🧬 Upload EEG File</h1>
+    <form method="POST" enctype="multipart/form-data" onsubmit="showLoader()" class="glass">
+      <label for="language">🌍 Language:</label>
+      <select name="language" id="language">
+        <option value="en">English</option>
+        <option value="hi">Hindi</option>
+        <option value="ta">Tamil</option>
+      </select><br><br>
+      <input type="file" name="eegfile" accept=".mat,.csv" required />
+      <br><br>
+      <button type="submit" class="btn">🚀 Generate Thought</button>
+    </form>
+    <div id="loader" class="loader" style="display: none;"></div>
+    {% if output_text %}
+    <div class="output-box fade-in">
+      <h2>🧠 Generated Thought</h2>
+      <div class="typing" id="typedText"></div>
+      {% if eeg_plot %}
+      <h3>📈 EEG Signal Visual</h3>
+      <img src="{{ url_for('eeg_plot_file', filename=eeg_plot) }}" alt="EEG Plot" width="100%" class="eeg-plot" />
+      {% endif %}
+      {% if preview_data %}
+      <h3>📊 EEG Feature Graph</h3>
+      <canvas id="eegChart" height="150"></canvas>
+      {% endif %}
+      <h3>🧪 Analysis Summary</h3>
+      <ul style="text-align:left; padding-left:20px; line-height:1.6;">
+        <li><strong>Category:</strong> {{ category }}</li>
+        <li><strong>Top EEG Features:</strong> {{ preview_data }}</li>
+        <li><strong>ROUGE:</strong> {{ rouge }}</li>
+        <li><strong>BLEU:</strong> {{ bleu }}</li>
+        <li><strong>Accuracy:</strong> {{ accuracy }}</li>
+        <li><strong>⏱ Time Taken:</strong> {{ output_time }} seconds</li>
+      </ul>
+    </div>
+    {% endif %}
+  </main>
+  <footer>
+    <p>&copy; 2025 NeuroScribe | Final Year Project</p>
+  </footer>
+  <script>
+  function showLoader() {
+    document.getElementById("loader").style.display = "block";
+  }
+
+  window.onload = function () {
+    const text = `{{ output_text | safe }}`;
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("typedText").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 40);
+      }
+    }
+    if (text) typeWriter();
+
+    {% if preview_data %}
+    const ctx = document.getElementById('eegChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: Array.from({ length: {{ preview_data | length }} }, (_, i) => i),
+        datasets: [{
+          label: 'EEG Top Features',
+          data: {{ preview_data | tojson }},
+          borderColor: '#2ecc71',
+          backgroundColor: 'rgba(46, 204, 113, 0.1)',
+          fill: true,
+          tension: 0.4
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: true }
+        },
+        scales: {
+          y: { beginAtZero: false }
+        }
+      }
+    });
+    {% endif %}
+  };
+</script>
+</body>
+</html>

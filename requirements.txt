@@ -1,0 +1,11 @@
+Flask==2.2.5
+numpy==1.24.3
+scipy==1.11.4
+torch==2.1.0
+transformers==4.38.2
+matplotlib
+werkzeug
+pandas
+nltk
+rouge-score
+scikit-learn

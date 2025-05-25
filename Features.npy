@@ -1,0 +1,5 @@
+from models.eeg_utils import extract_eeg_features
+import numpy as np
+
+feature = extract_eeg_features("uploads/YAG_NR4_corrected_ET.mat")
+np.save("features/YAG_NR4_features.npy", feature)
