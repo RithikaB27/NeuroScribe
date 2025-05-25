@@ -51,7 +51,6 @@ NeuroScribe is a Brain-Computer Interface (BCI) powered project that transforms 
 ## 📁 Supported File Formats
 
 - `.mat` files (MATLAB v7 and v7.3)
-- `.csv` files (numeric EEG columns)
 
 ---
 
@@ -146,4 +145,3 @@ Visit http://127.0.0.1:5000 in your browser.
 
 ---
 
-## 👨‍💻 Authors
