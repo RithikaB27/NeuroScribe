@@ -1,6 +1,6 @@
 # NeuroScribe: Turning Thoughts into Words
 
-NeuroScribe is a Brain-Computer Interface (BCI) powered project that transforms EEG brainwave signals into human-readable thoughts across multiple languages (English, Hindi, and Tamil). Built using AI, NLP, and Deep Learning-inspired pipelines, it supports `.mat` and `.csv` EEG files and produces meaningful visualizations, thought generation, and performance metrics.
+NeuroScribe is a Brain-Computer Interface (BCI) powered project that transforms EEG brainwave signals into human-readable thoughts across multiple languages (English, Hindi, and Tamil). Built using AI, NLP, and Deep Learning-inspired pipelines, it supports `.mat` EEG files and produces meaningful visualizations, thought generation, and performance metrics.
 
 ---
 
@@ -151,7 +151,7 @@ http://127.0.0.1:5000
 ### 🧪 5. Upload EEG File & Generate Thought
 
 1. Navigate to the **Generate** page.
-2. Upload a `.mat` or `.csv` EEG file.
+2. Upload a `.mat` EEG file.
 3. Choose a language (English, Hindi, Tamil).
 4. Click “Generate Thought”.
 5. View the output text, EEG graph, features, and metrics.
@@ -221,7 +221,7 @@ http://127.0.0.1:5000
   Used as a reference for EEG data structure and feature modeling.  
   [Link to dataset](https://osf.io/2urht/)
 
-- **Custom `.mat` and `.csv` EEG Files**  
-  EEG files in `.mat` (MATLAB) and `.csv` formats collected or simulated for test purposes.
+- **Custom `.mat` EEG Files**  
+  EEG files in `.mat` (MATLAB) format collected or simulated for test purposes.
 
 ---
