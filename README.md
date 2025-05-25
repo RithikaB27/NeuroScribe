@@ -55,7 +55,7 @@ NeuroScribe is a Brain-Computer Interface (BCI) powered project that transforms 
 ---
 
 ## 📂 Folder Structure
-
+```
 NeuroScribe/
 ├── app.py
 ├── models/
@@ -72,7 +72,7 @@ NeuroScribe/
 ├── uploads/
 ├── requirements.txt
 ├── README.md
-
+```
 
 ---
 
@@ -83,19 +83,19 @@ NeuroScribe/
 git clone https://github.com/your-username/neuroscribe.git
 cd neuroscribe
 
-### 2. Install Dependencies
+**### 2. Install Dependencies**
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt```
 
-### 3. Run the App
+**### 3. Run the App**
 ```bash
-python app.py
+python app.py```
 
 Visit http://127.0.0.1:5000 in your browser.
 
 ---
 
-## 🧪 Example Workflow
+**## 🧪 Example Workflow**
 
 1. Go to the Generate page.
 2. Upload an EEG file (.mat or .csv).
@@ -109,7 +109,7 @@ Visit http://127.0.0.1:5000 in your browser.
 
 ---
 
-## 📦 Software Requirements
+**## 📦 Software Requirements**
 
 - Python 3.8 or higher
 - OS: Windows 10 / Linux / macOS
@@ -118,7 +118,7 @@ Visit http://127.0.0.1:5000 in your browser.
 
 ---
 
-## 🛠 Tools Used
+**## 🛠 Tools Used**
 
 - Visual Studio Code (VS Code)
 - Git & GitHub (for version control)
@@ -126,7 +126,7 @@ Visit http://127.0.0.1:5000 in your browser.
 
 ---
 
-## 🔮 Future Enhancements
+**## 🔮 Future Enhancements**
 
 - 🧠 Integrate transformer models like BART/T5 for real-time decoding
 - 📊 Semantic Matching using SBERT or CLIP
@@ -138,7 +138,7 @@ Visit http://127.0.0.1:5000 in your browser.
 
 ---
 
-## 📚 Dataset Used
+**## 📚 Dataset Used**
 
 - ZuCo 2.0: Zurich Cognitive Language Processing Corpus
 (Used for feature structure inspiration. Real-time live EEG streaming not included.)
